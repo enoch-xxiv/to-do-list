@@ -1,3 +1,5 @@
+import { defaultProject } from "./projects";
+
 class toDo {
     constructor(title, description, dueDate, priority) {
         this.title = title;
@@ -8,5 +10,8 @@ class toDo {
 }
 
 export default function createToDo(title, description, dueDate, priority) {
-    return new toDo(title, description, dueDate, priority)
+    const newToDo = new toDo(title, description, dueDate, priority)
+    defaultProject.toDos.push(newToDo)
+
+    return newToDo
 }
