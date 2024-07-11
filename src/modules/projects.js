@@ -38,6 +38,6 @@ class ProjectEditor {
 };
 
 const projectEditor = new ProjectEditor()
-const defaultProject = new Project("default");
+const defaultProject = new Project("Default");
 
 export { projectEditor, defaultProject }

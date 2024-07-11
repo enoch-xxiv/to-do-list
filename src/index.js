@@ -1,12 +1,10 @@
 import { defaultProject, projectEditor } from "./modules/projects";
-
-const test = projectEditor.createProject("test")
-test.addTask("hi test")
-
-defaultProject.addTask("yo", "wagwan", "gegadigi", "high")
-
-console.table(defaultProject.tasks)
-console.table(test.tasks)
+import { renderCurrentProject } from "./modules/ui";
 
 
+defaultProject.addTask("yo")
+defaultProject.addTask("wash my hair")
+defaultProject.addTask("go to the shops")
+
+renderCurrentProject(defaultProject)
 

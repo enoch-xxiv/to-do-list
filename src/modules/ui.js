@@ -1,10 +1,17 @@
 const content = document.querySelector("#content");
 
-function renderAddTaskButton() {
-    const addTaskButton = document.createElement("button");
-    addTaskButton.textContent = "Add task";
+function renderCurrentProject(Project) {
+    const projectTitle = document.querySelector("#current-project")
+    projectTitle.textContent = `Current Project: ${Project.title}`
 
-    return content.append(addTaskButton);
+    const taskSection = document.querySelector("#tasks")
+    Project.tasks.forEach(task => {
+        let taskSectionItem = document.createElement("p")
+        taskSectionItem.textContent = `${task.title}`
+        taskSection.appendChild(taskSectionItem)
+    });
 }
 
-export { renderAddTaskButton }
+
+
+export { renderCurrentProject }
