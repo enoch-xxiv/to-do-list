@@ -1,4 +1,4 @@
-import createTask from "./task";
+import Task from "./task";
 
 class Project {
     constructor(title) {
@@ -6,21 +6,18 @@ class Project {
         this.tasks = [];
     };
 
-    listTasks() {
-        return this.tasks;
+    addTask(title, description, dueDate, priority) {
+        const newTask = new Task(title, description, dueDate, priority);
+        this.tasks.push(newTask);
+        return newTask;
     }
-
+    
     removeTask(index) {
         this.tasks.splice(index, 1);
         return this.tasks;
     }
-
-    newTask(title, description, dueDate, priority) {
-        const task = createTask(title, description, dueDate, priority, true);
-        this.tasks.push(task);
-        return this.tasks;
-    }
 };
+
 
 class ProjectEditor {
     constructor() {
@@ -43,4 +40,4 @@ class ProjectEditor {
 const projectEditor = new ProjectEditor()
 const defaultProject = new Project("default");
 
-export { Project, projectEditor, defaultProject }
+export { projectEditor, defaultProject }
